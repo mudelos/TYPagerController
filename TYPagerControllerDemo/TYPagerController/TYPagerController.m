@@ -34,7 +34,7 @@
 
 - (TYPagerViewLayout<UIViewController *> *)layout {
     if (!_layout) {
-        UIScrollView *scrollView = [[UIScrollView alloc]init];
+        TYScrollView *scrollView = [[TYScrollView alloc]init];
         TYPagerViewLayout<UIViewController *> *layout = [[TYPagerViewLayout alloc]initWithScrollView:scrollView];
         layout.dataSource = self;
         layout.delegate = self;

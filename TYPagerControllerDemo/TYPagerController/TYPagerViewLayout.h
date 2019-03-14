@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TYScrollView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -69,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<TYPagerViewLayoutDelegate> delegate;
 
 // strong,will control the delegate,don't set delegate on other place.
-@property (nonatomic, strong, readonly) UIScrollView *scrollView;
+@property (nonatomic, strong, readonly) TYScrollView *scrollView;
 // if viewcontroller's automaticallyAdjustsScrollViewInsets YES ,will cause frame problems, you can set YES, default YES
 @property (nonatomic, assign) BOOL adjustScrollViewInset;
 
@@ -104,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  initializer will strong scrollView,and control delegate,don't set delegate on other place.
  */
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView NS_DESIGNATED_INITIALIZER; // strong scrollView
+- (instancetype)initWithScrollView:(TYScrollView *)scrollView NS_DESIGNATED_INITIALIZER; // strong scrollView
 
 - (ItemType _Nullable)itemForIndex:(NSInteger)idx;
 

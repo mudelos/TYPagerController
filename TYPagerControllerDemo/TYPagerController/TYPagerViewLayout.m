@@ -112,7 +112,7 @@ static const NSInteger kMemoryCountLimit = 16;
 
 // UI
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) TYScrollView *scrollView;
 
 // Data
 
@@ -140,7 +140,7 @@ static NSString * kScrollViewFrameObserverKey = @"scrollView.frame";
 
 #pragma mark - init
 
-- (instancetype)initWithScrollView:(UIScrollView *)scrollView {
+- (instancetype)initWithScrollView:(TYScrollView *)scrollView {
     if (self = [super init]) {
         NSParameterAssert(scrollView!=nil);
         _scrollView = scrollView;

@@ -81,7 +81,7 @@
     return _layout.visibleItems;
 }
 
-- (UIScrollView *)scrollView {
+- (TYScrollView *)scrollView {
     return _layout.scrollView;
 }
 

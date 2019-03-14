@@ -58,7 +58,7 @@
 }
 
 - (void)addLayoutScrollView {
-    UIScrollView *contentView = [[UIScrollView alloc]init];
+    TYScrollView *contentView = [[TYScrollView alloc]init];
     TYPagerViewLayout<UIView *> *layout = [[TYPagerViewLayout alloc]initWithScrollView:contentView];
     layout.dataSource = self;
     layout.delegate = self;

@@ -10,12 +10,17 @@
 
 @implementation TYScrollView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+//    CGFloat width = self.contentSize.width - self.frame.size.width;
+    
+//    NSLog(@"width = %f, offsetX = %f",width, self.contentOffset.x);
+    
+    if (self.contentOffset.x == 0) {
+        return YES;
+    }
+    
+    return NO;
+    
 }
-*/
 
 @end

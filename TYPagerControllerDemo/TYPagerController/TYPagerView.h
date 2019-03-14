@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TYPagerViewLayout.h"
+#import "TYScrollView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -61,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<TYPagerViewDelegate> delegate;
 // pagerView's layout,don't set layout's dataSource to other
 @property (nonatomic, strong, readonly) TYPagerViewLayout<UIView *> *layout;
-@property (nonatomic, strong, readonly) UIScrollView *scrollView;
+@property (nonatomic, strong, readonly) TYScrollView *scrollView;
 
 @property (nonatomic, assign, readonly) NSInteger countOfPagerViews;
 @property (nonatomic, assign, readonly) NSInteger curIndex;// default -1

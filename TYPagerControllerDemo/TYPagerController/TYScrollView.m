@@ -30,6 +30,10 @@
         return NO;
     }
     
+    if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"PXCollectionView"]) {
+        return NO;
+    }
+    
     if ([NSStringFromClass(otherGestureRecognizer.view.class) isKindOfClass:UIScrollView.class]) {
         return NO;
     }

@@ -14,8 +14,13 @@
 //    CGFloat width = self.contentSize.width - self.frame.size.width;
     
 //    NSLog(@"width = %f, offsetX = %f",width, self.contentOffset.x);
+//    NSLog(@"offsetX = %f gestureRecognizer = %@, otherGestureRecognizer = %@ ", self.contentOffset.x,gestureRecognizer,otherGestureRecognizer);
     
-    if (self.contentOffset.x == 0) {
+    if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UITableView"]) {
+        return NO;
+    }
+    
+    if (self.contentOffset.x <= 0) {
         return YES;
     }
     

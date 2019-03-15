@@ -16,6 +16,8 @@
 //    NSLog(@"width = %f, offsetX = %f",width, self.contentOffset.x);
 //    NSLog(@"offsetX = %f gestureRecognizer = %@, otherGestureRecognizer = %@ ", self.contentOffset.x,gestureRecognizer,otherGestureRecognizer);
     
+    NSLog(@"otherGestureRecognizer.view = %@", NSStringFromClass(otherGestureRecognizer.view.class));
+    
     if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UITableView"]) {
         return NO;
     }
@@ -25,6 +27,10 @@
     }
     
     if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UIScrollView"]) {
+        return NO;
+    }
+    
+    if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"TYPagerView"]) {
         return NO;
     }
     

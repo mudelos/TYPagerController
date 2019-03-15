@@ -24,6 +24,10 @@
         return NO;
     }
     
+    if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UIScrollView"]) {
+        return NO;
+    }
+    
     if (self.contentOffset.x <= 0) {
         return YES;
     }

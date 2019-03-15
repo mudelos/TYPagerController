@@ -20,6 +20,10 @@
         return NO;
     }
     
+    if ([NSStringFromClass(otherGestureRecognizer.view.class) isEqualToString:@"UICollectionView"]) {
+        return NO;
+    }
+    
     if (self.contentOffset.x <= 0) {
         return YES;
     }

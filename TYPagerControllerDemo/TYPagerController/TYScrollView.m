@@ -11,9 +11,9 @@
 @implementation TYScrollView
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-//    CGFloat width = self.contentSize.width - self.frame.size.width;
+    CGFloat width = self.contentSize.width - self.frame.size.width;
     
-//    NSLog(@"width = %f, offsetX = %f",width, self.contentOffset.x);
+    NSLog(@"width = %f, offsetX = %f",width, self.contentOffset.x);
 //    NSLog(@"offsetX = %f gestureRecognizer = %@, otherGestureRecognizer = %@ ", self.contentOffset.x,gestureRecognizer,otherGestureRecognizer);
     
 //    NSLog(@"otherGestureRecognizer.view = %@", NSStringFromClass(otherGestureRecognizer.view.class));
@@ -38,9 +38,25 @@
         return NO;
     }
     
-    if (self.contentOffset.x <= 0) {
-        return YES;
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSArray * allLanguages = [defaults objectForKey:@"AppleLanguages"];
+    
+    NSString * preferredLang = [allLanguages objectAtIndex:0];
+    
+    if(preferredLang.length >= 2 && [[preferredLang substringToIndex:2] isEqualToString:@"ar"]){
+        if (self.contentOffset.x >= width) {
+            return YES;
+        }
+    }else{
+        if (self.contentOffset.x <= 0) {
+            return YES;
+        }
     }
+    
+    
+    
+    
     
     return NO;
     
